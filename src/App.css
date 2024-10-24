@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './Css/Carousel.css';
+@import './Css/WorldTour.css';
+@import './Css/Orders.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mainPage{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.mainPage2{
+  padding-left: 145px;
+  padding-right: 145px;
+}
+.navTabs li{
+  padding: 0px 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn-ot{
+  padding: 10px 18px;
+  color: #182252;
+  border: 1px solid #182252;
+  font-size: 18px;
+  font-weight: 600;  
+}
+.btn{
+  padding: 8px 24px !important;
+}
+.text-l{
+  font-size: 18px;
+}
+.btn-p{
+  padding: 10px 18px;
+  background-color: var(--Gray-600, #394375);
+  color: white;
+}
+.clr-p{
+  color: var(--Gray-600, #394375);
+}
+.text-grad{
+  line-height: 72px;
+  background: linear-gradient(to right, #00D2D3, #3593FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.fw600{
+  font-weight: 600; 
+}
+.fw400{
+  font-weight: 400; 
+}
+.roboto{
+  font-family: "Roboto Serif", serif;;
+}
+.w-700{
+  width: 700px;
+}
+.converter-card{
+  border-radius: 24px;
+  padding: 36px 48px;
+
+}
+.small{
+  font-size: 14px ;
+  color: #7680B0;
+}
+.input-gray{
+  border: 1px solid #AFB7DC;
+  padding: 10px 24px;
+}
+.services{
+  margin-top: 200px;
+}
+
+.blue-list{
+  text-align: start;
+  font-weight: 600;
+  font-size: 16px;
+  list-style: none; 
+  padding-left: 0;   
+}
+
+.blue-list li {
+  position: relative;
+  padding-left: 40px; 
+  margin-bottom: 10px; 
+}
+.blackLi li:before{
+  background-color: black !important; 
+}
+.blue-list li::before {
+    content: '\2714'; 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); 
+    background-color: #3593FF; 
+    color: white; 
+    border-radius: 50%; 
+    width: 24px; 
+    height: 24px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; 
+    font-weight: bold; 
+}
+.business-card{
+  background-color: #182252;
+  padding: 80px 110px;
+  color: white;
+}
+.grad-line{
+  height: 5px;
+  background: linear-gradient(89.46deg, #EEC840 2.99%, #00D2D3 25.44%, #0076FF 54.16%, #00D2D3 81.22%, #EEC840 95.89%);
+}
+.text-gray{
+  color: #2C3667;
+}
+.proposition-card{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(246, 249, 252, 0.3) 50%, #F6F9FC 60%);
+
+}
+.business-csr-card{
+  box-shadow: 0px 0px 36px 0px #98A2B34D;
+  border: 1px solid #B9C5DF;
+}
+
+
+.support-card{
+  margin-top: 100px;
+  background-image: url('../public/24Hsupport.svg');
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step1{
+  background: linear-gradient(166.28deg, #00D2D3 43.18%, #00B3FF 90.5%);
+  color : white;
+  font-size: 14px;
+}
+.step2{
+  background: var(--Gray-50, #D5DAEF);
+  color: var(--Gray-200, #8C95C2);
+  font-size: 14px;
+}
+.book-mark{
+  background: #F4F6F9;
+}
+.text-rbw {
+  background: linear-gradient(89.46deg, #EEC840 2.99%, #00D2D3 25.44%, #0076FF 54.16%, #00D2D3 81.22%, #EEC840 95.89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.subscribe-container {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  /* max-width: 400px; */
+}
+
+.subscribe-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  background: #D5DAEF66;
+  border: 1px solid #D5DAEF66;
+  color: var(--Gray-300, #7680B0);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.subscribe-container button {
+  padding: 10px 30px;
+  font-size: 18px;
+  border: none;
+  background-color: var(--Gray-600, #394375);
+  /* border: 1px solid var(--Gray-600, #394375); */
+  color: white;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+}
+
+.subscribe-container button:hover {
+  background-color: #218838;
+}
+.sub-card{
+  padding: 80px 120px;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background-image: url('../public/NewGradientAnimation.png');
+  background-size: cover; 
+  /* background-position: center;  */
+  background-repeat: no-repeat; 
+}
+.border-line{
+  content: '';
+  border: 1px solid var(--Gray-50, #D5DAEF);
+  margin: 30px 0px;
+}
+.text-xxs{
+  color: var(--Gray-700, #2C3667);
+  font-size: 10px;
+}
+.hit-bg{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(246, 249, 252, 0.3) 50%, #F6F9FC 60%);
+}
+@media (max-width: 1025px) {
+  .mainPage{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mainPage2{
+    padding-left: 125px;
+    padding-right: 125px;
+  }
+}
+
+@media (max-width: 625px) {
+  .mainPage{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .text-6xl{
+      font-size: 40px;
+  }
+  .mainPage2{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .globe{
+    margin-top: 200px;
+  }
+  .observablehq{
+    height: 200px;
+  }
+  .w-sm-full{
+    width: 100%;
+  }
+  .business-card{
+    padding: 80px 10px;
+  }
+  .sub-card{
+    padding: 80px 10px;
+    height: 500px;
+  }
+  .support-card{
+    background-image: none;
+  }
+  .subscribe-container{
+    flex-direction: column;
+  }
+  .btm-sm{
+    border-radius: 8px !important;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .sm-inp{
+      border-radius: 8px !important;
+      margin-bottom: 8px;
+      margin-top: 8px;
+  }
+  .sm-col{
+    flex-direction: column;
+  }
+  .w-700{
+    width: 90%;
+  }
+
+}
