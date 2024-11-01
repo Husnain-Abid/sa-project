@@ -1,0 +1,33 @@
+.logos-slide, .slide {
+    width: 86% ;
+  }
+  
+@media only screen and (min-width: 400px) and (max-width : 2200px)  {
+    .logos-slide, .slide{
+        width: 1550px !important;
+    }
+}
+
+
+
+.v-card3{
+    padding: 10px;
+    background-color: transparent !important;
+}
+.v-card3:hover{
+    background-image: url('/public/BackgroundGlow.png');
+     height: 295px !important;
+    min-width: 476px !important;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+.opacity-0{
+    opacity: 0 !important;
+}

@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 1050px) {
     .lg\:order-1 {
         order: 1 !important;
     }

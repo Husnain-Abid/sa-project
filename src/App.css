@@ -5,6 +5,8 @@
 @import './Css/Carousel.css';
 @import './Css/WorldTour.css';
 @import './Css/Orders.css';
+@import './Css/Slider.css';
+@import './Css/Animations.css';
 
 html, body {
   margin: 0;
@@ -92,7 +94,7 @@ input[type="number"] {
   font-size: 18px;
 }
 .btn-p{
-  padding: 10px 18px;
+  padding: 6px 12px;
   background-color: var(--Gray-600, #394375);
   color: white;
 }
@@ -116,6 +118,9 @@ input[type="number"] {
 .roboto{
   font-family: "Roboto Serif", serif;;
 }
+.w-73{
+  width: 20rem;
+}
 .w-700{
   width: 700px;
 }
@@ -123,6 +128,12 @@ input[type="number"] {
   border-radius: 24px;
   padding: 36px 48px;
 
+}
+.font-10{
+  font-size: 10px;
+}
+.font-8{
+  font-size: 8px;
 }
 .small{
   font-size: 14px ;
@@ -174,9 +185,20 @@ input[type="number"] {
   padding: 80px 110px;
   color: white;
 }
-.grad-line{
+.grad-line {
   height: 5px;
   background: linear-gradient(89.46deg, #EEC840 2.99%, #00D2D3 25.44%, #0076FF 54.16%, #00D2D3 81.22%, #EEC840 95.89%);
+  background-size: 200% 100%; /* Double the width to allow smooth animation */
+  animation: moveGradient 5s linear infinite; /* Animation with 4s duration */
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 .text-gray{
   color: #2C3667;
@@ -276,6 +298,9 @@ input[type="number"] {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(246, 249, 252, 0.3) 50%, #F6F9FC 60%);
 }
 @media (max-width: 1025px) {
+  .class{
+    grid-template-columns: 1fr;
+  }
   .mainPage{
     padding-left: 30px;
     padding-right: 30px;
@@ -285,7 +310,6 @@ input[type="number"] {
     padding-right: 125px;
   }
 }
-
 @media (max-width: 625px) {
   .mainPage{
     padding-left: 10px;
@@ -299,10 +323,13 @@ input[type="number"] {
     padding-right: 15px;
   }
   .globe{
-    margin-top: 200px;
+    margin-top: 140px;
   }
   .observablehq{
-    height: 200px;
+    height: 140px;
+  }
+  .curr-icons{
+    top: -45px;
   }
   .w-sm-full{
     width: 100%;
@@ -337,4 +364,366 @@ input[type="number"] {
     width: 90%;
   }
 
+}
+@media (max-width: 425px) {
+  .globe{
+    margin-top: 110px;
+  }
+  .observablehq{
+    height: 110px;
+  }
+  .curr-icons{
+    top: -40px;
+  }
+}
+
+
+/* styles.css */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.currency-symbol {
+  width: 70px;
+  height: 70px;
+  background-color: var(--Gray-100, #AFB7DC);
+  opacity: 0.7;
+  color: white;
+  box-shadow: 0px -2px 8px 0px rgba(20, 62, 104, 0.35) inset;
+  filter: drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.30)) drop-shadow(0px 50px 100px rgba(50, 50, 93, 0.25));
+  /* background-color: #f3f4f6; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.currency-symbol.top-left {
+  top: -20px;
+  left: -20px;
+  animation: bounce 3s infinite;
+}
+
+.currency-symbol.top-right {
+  top: -20px;
+  right: -20px;
+  animation: bounce-slow 3s infinite;
+}
+
+.currency-symbol.bottom-right {
+  bottom: 40px;
+  right: -30px;
+  animation: bounce 3s infinite;
+}
+
+.arrow-icon {
+  top: 51%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  background-color: rgba(44, 54, 103, 1);
+  color: white;
+  border-radius: 29%;
+  padding: 0.5rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customBoxShadow{
+  box-shadow: 
+  0px 4px 10px rgba(0, 0, 0, 0.1),   
+  0px 10px 15px rgba(0, 0, 0, 0.05), 
+  0px 0px 20px rgba(0, 0, 0, 0.03);
+}
+/* styles.css */
+
+.rate-container {
+  overflow: hidden;
+  height: 1.5em; 
+  position: relative;
+}
+
+.rate-value {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.animate-slide {
+  transform: translateY(-100%); /* Slide up */
+}
+.shine {
+  content: "";
+  position: absolute;
+  top: -50%;         
+  left: -50%;         
+  width: 200%;        /* Wide enough to cover the diagonal */
+  height: 200%;       /* Tall enough to cover the diagonal */
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  transform: rotate(45deg);              /* Rotate to create diagonal effect */
+  pointer-events: none;                  /* Make it unclickable */
+  animation: shine-animation 2s infinite; /* Infinite animation */
+}
+
+/* Animation for the shine effect */
+@keyframes shine-animation {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(45deg);
+  }
+}
+.leftCard{
+  position: relative;
+}
+.PhysicalCard{
+  top: 10%;
+  right: -50%;
+position: absolute;
+}
+.rightCard{
+  position: relative;
+}
+
+/* shineEffect */
+.foil-image {
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  text-align:center;
+  padding:10px;
+  width:100%;
+  transform-origin:center center;
+  transform-style:preserve-3d;
+}
+.foil-image::after {
+  content:' ';
+  position:absolute;
+  height:200%;
+  width:200%;
+  top:0px;
+  left:0px;
+  z-index:2;
+  -webkit-animation: moveafter 4s infinite linear;
+  -moz-animation: moveafter 4s infinite linear;
+  animation: moveafter 4s infinite linear;
+  
+background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(45%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.2)), color-stop(55%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 45%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 45%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 45%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 45%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.img {
+  width: 220px;
+  height:290px;
+  background:url('/public/AtmCard.png') center center no-repeat;
+}
+.imgSignUp {
+  width: 400px;
+  height:330px;
+  background:url('/public/Sign up online.png') center center no-repeat;
+}
+@-webkit-keyframes move {
+  0% { 
+    -webkit-transform:rotateX(5deg) rotateY(-5deg) rotateZ(-1deg);
+  }
+  25% { 
+    -webkit-transform:rotateX(5deg) rotateY(5deg) rotateZ(0deg);
+  }
+  50% { 
+    -webkit-transform:rotateX(-5deg) rotateY(5deg) rotateZ(1deg);
+  }
+  75% { 
+    -webkit-transform:rotateX(-5deg) rotateY(-5deg) rotateZ(0deg);
+  }
+  100% { 
+    -webkit-transform:rotateX(5deg) rotateY(-5deg) rotateZ(-1deg);
+  }
+}
+@-moz-keyframes move {
+  0% { 
+    -moz-transform:rotateX(15deg) rotateY(-15deg) rotateZ(-3deg);
+  }
+  25% { 
+    -moz-transform:rotateX(15deg) rotateY(15deg) rotateZ(0deg);
+  }
+  50% { 
+    -moz-transform:rotateX(-15deg) rotateY(15deg) rotateZ(3deg);
+  }
+  75% { 
+    -moz-transform:rotateX(-15deg) rotateY(-15deg) rotateZ(0deg);
+  }
+  100% { 
+    -moz-transform:rotateX(15deg) rotateY(-15deg) rotateZ(-3deg);
+  }
+}
+@keyframes move {
+  0% { 
+    transform:rotateX(15deg) rotateY(-15deg) rotateZ(-3deg);
+  }
+  25% { 
+    transform:rotateX(15deg) rotateY(15deg) rotateZ(0deg);
+  }
+  50% { 
+    transform:rotateX(-15deg) rotateY(15deg) rotateZ(3deg);
+  }
+  75% { 
+    transform:rotateX(-15deg) rotateY(-15deg) rotateZ(0deg);
+  }
+  100% { 
+    transform:rotateX(15deg) rotateY(-15deg) rotateZ(-3deg);}
+}
+@-webkit-keyframes moveafter {
+  0% {
+    top:100%;
+    left:100%;
+  }
+  50% {
+    top:-100%;
+    left:-100%;
+  }
+  100% {
+    top:-200%;
+    left:-200%;
+  }
+}
+@-moz-keyframes moveafter {
+  0% {
+    top:100%;
+    left:100%;
+  }
+  50% {
+    top:-100%;
+    left:-100%;
+  }
+  100% {
+    top:-100%;
+    left:-100%;
+  }
+}
+@keyframes moveafter {
+  0% {
+    top:-100%;
+    left:-100%;
+  }
+  50% {
+    top:-100%;
+    left:-100%;
+  }
+  100% {
+    top:100%;
+    left:100%;
+  }
+}
+.scaling-path {
+  transform-origin: center !important;
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+    fill: #B0B0B0; /* Gray color at start */
+  }
+  50% {
+    transform: scale(1.02);
+    fill: #F0F0F0; /* Original color at peak */
+  }
+  100% {
+    transform: scale(1);
+    fill: #B0B0B0; /* Return to gray */
+  }
+}
+
+.scale-active {
+  animation: scaleUpDown 5s forwards;
+  transform-origin: center !important;
+}
+.bgWhiteImg{
+  background-image: url('/public/WhiteBg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  background-position: center;
+  width: 400px;
+}
+.serviceAmount{
+  color: rgba(44, 54, 103, 1);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.bar-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  background-color: #f9f9f9;
+  margin: 5px;
+  border-radius: 10px;
+}
+.bar-1{
+  height: 100px !important;
+}
+.bar-2{
+  height: 130px !important;
+}
+.bar-3{
+  height: 180px !important;
+}
+.bar-4{
+  height: 130px !important;
+}
+.bar-5{
+  height: 100px !important;
+}
+
+.bar {
+  padding: 5px;
+  width: 40px;
+  background: linear-gradient(to top, #00d4ff, #00c0ff);
+  border-radius: 10px;
+  transition: height 0.5s ease; /* Smooth height transition */
+}
+
+.label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+.ChartBarHeight{
+  top: 15%;
+  height: max-content !important;
 }

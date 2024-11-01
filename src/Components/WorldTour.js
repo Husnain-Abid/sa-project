@@ -20,7 +20,10 @@ const ObservableCanvas = () => {
   }, []);
 
   return (
-    <div>
+    <div className='w-full'>
+      <div className='mx-auto w-full flex justify-center items-start relative h-full'>
+      <img className='mx-auto absolute z-999 curr-icons' alt="Not Available" src="/Icons/SectionCurrency.png" />
+      </div>
       <div id="observablehq-canvas-ec88052a" ref={canvasRef}></div>
       </div>
   );

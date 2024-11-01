@@ -23,7 +23,7 @@ const Proposition = () => {
             <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-32   '>
                 {propo.map(
                     pro => (
-                        <div className='my-12 mx-5'>
+                        <div className='py-12 px-5 bg-anim-1'>
                             <img alt="Not Found" src={pro.img} />
                             <p className='roboto fw600 text-xl mt-4'>{pro.title}</p>
                             <p className='small mt-3'>{pro.desc}</p>

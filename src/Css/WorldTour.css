@@ -14,7 +14,7 @@
   } */
   .observablehq{
     position: absolute;
-    height: 600px;
+    height: 400px;
     overflow: hidden;
     width: 100% !important;
     /* width: 2200px !important; */
@@ -26,17 +26,41 @@
     /* width: 2200px !important; */
 }
 .globe{
-    margin-top: 600px;
+    margin-top: 400px;
     position: relative;
     z-index: 999 !important;
+}
+.z-999{
+  z-index: 100 !important;
+}
+.curr-icons{
+  top: -90px;
+  width: 51%;
 }
 .cvt-shadow {
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
     padding: 26px;
   }
 
+@media (min-width: 1050px) {  
+    .lg-grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
 
-    @media only screen and (min-width: 700px) and (max-width : 1000px)  {
+    @media only screen and (min-width: 781px) and (max-width : 1080px)  {
+      .curr-icons{
+        width: 75% !important;
+      }
+    }
+    @media only screen and (min-width: 300px) and (max-width : 780px)  {
+      .curr-icons{
+        width: 100% !important;
+      }
+    
+    }
+    @media only screen and (min-width: 700px) and (max-width : 1050px)  {
+
       .observablehq{
         height: 250px;
         width: 100% !important;
@@ -48,32 +72,42 @@
     }
     @media only screen and (min-width: 1000px) and (max-width : 1700px)  {
       .observablehq{
-        height: 350px;
+        height: 200px;
         width: 100% !important;
       }
       .globe{
-        margin-top: 350px !important;
+        margin-top: 200px !important;
       }
         
     }
     @media only screen and (min-width: 1700px)  {
       .observablehq{
         position: absolute;
-        height: 750px;
+        height: 230px;
         width: 100% !important;
-
+    }
+    .h-div{
+      height: 230px !important;
     }
     .observablehq canvas{
         /* left: -1500px; */
-        z-index: 999;
+        z-index: 99;
         /* width: calc(100% - 400px) !important; */
         /* width: 1900px !important; */
     }
     .globe{
-      margin-top: 750px !important;
+      margin-top: 230px !important;
     }
     .header-text{
       width: 600px;
       text-align: start;
+    }
+    .mainPage{
+      padding-left: 300px !important;
+      padding-right: 300px !important;
+    }
+    .mainPage2{
+      padding-left: 350px !important;
+      padding-right: 350px !important;
     }
     }

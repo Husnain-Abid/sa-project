@@ -50,7 +50,7 @@ const Converter = () => {
   return (
     <div className="mainPage">
 
-      <div className="globe converter-card cvt-shadow grid lg:grid-cols-10 grid-cols-4 gap-3 items-center">
+      <div className="globe converter-card cvt-shadow grid lg:grid-cols-11 grid-cols-4 gap-3 items-center">
         <div className="flex flex-col col-span-4 ">
           <label className="small">Amount</label>
           <div className="relative">
@@ -97,7 +97,7 @@ const Converter = () => {
           <label className="small">This is a hint text to help user.</label>
         </div>
 
-        <div className="lg:col-span-1 col-span-4 flex justify-center">
+        <div className=" lg:col-span-2 col-span-4 flex justify-center">
           <button className="btn-p rounded-md w-full" onClick={convertCurrency}>
             Continue
           </button>
