@@ -16,7 +16,7 @@ const Navbar = () => {
             </div>
             <div className='items-center  sm:flex hidden'>
                 <button className='fw600 btn'>Login</button>
-                <button className='btn-p rounded-md'>Sign up </button>
+                <button className='btn-p rounded-md py-2 px-3'>Sign up </button>
             </div>
             <div className='sm:hidden visible sm:mr-0 mr-4'>
                 <img alt="Not Available" src="List.svg" />

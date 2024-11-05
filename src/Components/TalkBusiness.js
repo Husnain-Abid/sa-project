@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from './Carousel';
 
 
@@ -7,16 +7,16 @@ const TalkBusiness = () => {
         { id: 1, title: 'Card 1', content: (
             <div className='rounded-lg p-2'>
             <img alt="Not Found" className='w-full' src="/13.png" />
-            <p className='mt-3 fw600 text-lg'>Title</p>
-            <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+            <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
+            <p className='small px-0 text-left'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
 
             <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-2'>
                 <div className='flex items-center'>
                     <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png' />
-                    <div>
-                        <p className='fw-bold'>Header</p>
-                        <p className='small'>January 13,</p>
-                        <p className='small'>2023</p>
+                    <div className='ps-3'>
+                        <p className='fw-bold text-left'>Header</p>
+                        <p className='small text-left'>January 13,</p>
+                        <p className='small text-left'>2023</p>
                     </div>
                 </div>
                 <div>
@@ -31,16 +31,16 @@ const TalkBusiness = () => {
         { id: 1, title: 'Card 1', content: (
             <div className='rounded-lg p-2'>
             <img alt="Not Found" className='w-full' src="/13.png" />
-            <p className='mt-3 fw600 text-lg'>Title</p>
-            <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+            <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
+            <p className='small text-left'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
 
             <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-2'>
                 <div className='flex items-center'>
                     <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png' />
-                    <div>
-                        <p className='fw-bold'>Header</p>
-                        <p className='small'>January 13,</p>
-                        <p className='small'>2023</p>
+                    <div className='ps-3'>
+                        <p className='fw-bold text-left'>Header</p>
+                        <p className='small text-left'>January 13,</p>
+                        <p className='small text-left'>2023</p>
                     </div>
                 </div>
                 <div>
@@ -55,16 +55,16 @@ const TalkBusiness = () => {
         { id: 2, title: 'Card 2', content: (
             <div className='rounded-lg  p-2'>
             <img alt="Not Found" className='w-full' src="/13.png" />
-            <p className='mt-3 fw600 text-lg'>Title</p>
-            <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+            <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
+            <p className='small text-left'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
 
             <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-2'>
                 <div className='flex items-center'>
                     <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png' />
-                    <div>
-                        <p className='fw-bold'>Header</p>
-                        <p className='small'>January 13,</p>
-                        <p className='small'>2023</p>
+                    <div className='ps-3'>
+                        <p className='fw-bold text-left'>Header</p>
+                        <p className='small text-left'>January 13,</p>
+                        <p className='small text-left'>2023</p>
                     </div>
                 </div>
                 <div>
@@ -79,16 +79,16 @@ const TalkBusiness = () => {
         { id: 3, title: 'Card 1', content: (
             <div className='rounded-lg p-2'>
             <img alt="Not Found" className='w-full' src="/13.png" />
-            <p className='mt-3 fw600 text-lg'>Title</p>
-            <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+            <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
+            <p className='small text-left'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
 
             <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-2'>
                 <div className='flex items-center'>
                     <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png' />
-                    <div>
-                        <p className='fw-bold'>Header</p>
-                        <p className='small'>January 13,</p>
-                        <p className='small'>2023</p>
+                    <div className='ps-3'>
+                        <p className='fw-bold text-left'>Header</p>
+                        <p className='small text-left'>January 13,</p>
+                        <p className='small text-left'>2023</p>
                     </div>
                 </div>
                 <div>
@@ -103,16 +103,16 @@ const TalkBusiness = () => {
         { id: 4, title: 'Card 1', content: (
             <div className='rounded-lg p-2'>
             <img alt="Not Found" className='w-full' src="/13.png" />
-            <p className='mt-3 fw600 text-lg'>Title</p>
-            <p className='small'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
+            <p className='mt-3 fw600 text-lg text-left pb-3'>Title</p>
+            <p className='small text-left '>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
 
             <div className='mt-3 book-mark rounded-md flex items-center justify-between px-3 py-2'>
                 <div className='flex items-center'>
                     <img className='w-14 h-14 rounded-md' alt='not available' src='/12.png' />
-                    <div>
-                        <p className='fw-bold'>Header</p>
-                        <p className='small'>January 13,</p>
-                        <p className='small'>2023</p>
+                    <div className='ps-3'>
+                        <p className='fw-bold text-left'>Header</p>
+                        <p className='small text-left'>January 13,</p>
+                        <p className='small text-left'>2023</p>
                     </div>
                 </div>
                 <div>
@@ -125,8 +125,32 @@ const TalkBusiness = () => {
 
     ) },
 ]
+
+
+
+const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 640);
+    };
+
+    // Set initial value based on screen width
+    handleResize();
+
+    // Listen for resize events
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+
+
+
+
     return (
-        <div className='pt-32 mainPage'>
+        <div className={` mainPage ${isMobile ? "pt-12" : "pt-32"}`}>
             <div className='text-start '>
                 <p className='small'>B l o g</p>
                 <p className='mt-3 roboto text-6xl fw600'>Let's talk business</p>

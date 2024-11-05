@@ -8,12 +8,12 @@ const Solution = () => {
                             <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
                         </div>
                         <div>
-                        <p className='fw600 text-gray'>KeyFX has transformed the way we handle international payments. Their service is fast, reliable, and cost-effective.</p>
+                        <p className='fw600 text-gray text-left pb-5'>KeyFX has transformed the way we handle international payments. Their service is fast, reliable, and cost-effective.</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
+                            <img alt="Not Found" className='rounded-full bg-gray testMonialCardImg'  src='/testImgCar.jpg' />
                             <div>
                                 <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
+                                <p className='small text-left'>Ceo</p>
                             </div>
                         </div>
                         </div>
@@ -24,12 +24,12 @@ const Solution = () => {
                             <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
                         </div>
                         <div>
-                        <p className='fw600 text-gray'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
+                        <p className='fw600 text-gray text-left pb-5'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
+                            <img alt="Not Found" className='rounded-full bg-gray testMonialCardImg'  src='/testImgCar.jpg' />
                             <div>
                                 <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
+                                <p className='small text-left'>Ceo</p>
                             </div>
                         </div>
                         </div>
@@ -40,12 +40,12 @@ const Solution = () => {
                             <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
                         </div>
                         <div>
-                        <p className='fw600 text-gray'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
+                        <p className='fw600 text-gray text-left pb-5'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
+                            <img alt="Not Found" className='rounded-full bg-gray testMonialCardImg'  src='/testImgCar.jpg' />
                             <div>
                                 <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
+                                <p className='small text-left'>Ceo</p>
                             </div>
                         </div>
                         </div>
@@ -56,12 +56,12 @@ const Solution = () => {
                             <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
                         </div>
                         <div>
-                        <p className='fw600 text-gray'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
+                        <p className='fw600 text-gray text-left pb-5'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
+                            <img alt="Not Found" className='rounded-full bg-gray testMonialCardImg'  src='/testImgCar.jpg' />
                             <div>
                                 <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
+                                <p className='small text-left'>Ceo</p>
                             </div>
                         </div>
                         </div>
@@ -72,12 +72,12 @@ const Solution = () => {
                             <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
                         </div>
                         <div>
-                        <p className='fw600 text-gray'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
+                        <p className='fw600 text-gray text-left pb-5'>Thanks to KeyFX's hedging solutions, we can now manage our currency risks with confidence. Highly recommend!</p>
                         <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
+                            <img alt="Not Found" className='rounded-full bg-gray testMonialCardImg'  src='/testImgCar.jpg' />
                             <div>
                                 <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
+                                <p className='small text-left'>Ceo</p>
                             </div>
                         </div>
                         </div>
@@ -93,23 +93,7 @@ const Solution = () => {
                 <p className='mt-4'>We go the extra mile. The Key.fx system is designed to make it easier for users to make any payments.</p>
             
                 <div className=''>
-                <Carousel cards={cards} />
-
-                    {/* <div className='bg-white rounded-2xl px-6 py-10 flex gap-4 w-96'>
-                        <div>
-                            <img alt="Not Found" className='mt-2 w-12' src="/“.png" />
-                        </div>
-                        <div>
-                        <p className='fw600 text-gray'>KeyFX has transformed the way we handle international payments. Their service is fast, reliable, and cost-effective.</p>
-                        <div className='mt-10 flex gap-3 items-center'>
-                            <img alt="Not Found" className='rounded-full bg-gray'  src='/component 9.png' />
-                            <div>
-                                <p className='fw600 text-black'>Sarah T</p>
-                                <p className='small'>Ceo</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div> */}
+                    <Carousel cards={cards} />
                 </div>
             </div>
 

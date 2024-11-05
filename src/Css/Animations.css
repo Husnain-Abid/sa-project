@@ -16,6 +16,9 @@
 .bg-anim-1:hover p.small{
     color: white;
 }
+.bg-anim-1:hover .text-xl{
+    color: white !important;
+}
 .icon-rotate2new{
     position: absolute;
     top: 30px;
@@ -54,16 +57,38 @@
     left: -20px;
     opacity: 1;
 }
+.local-img2{
+    top: -30px;
+    position: relative;
+    height: 95%;
+    transition: height 1s ease, transform 1s ease;
+}
+.local-img3{
+    height: 95%;
+    transition: height 1s ease, transform 1s ease;
+}
 .local-img{
-    height: 86%;
+    height: 95%;
     transition: height 1s ease, transform 1s ease;
 }
 .local-acc-card:hover .local-img{
     height: 100%;
 }
+.local-acc-card2{
+  overflow: hidden !important;
+}
+.local-acc-card2:hover .local-img2{
+    height: 100%;
+}
+.local-acc-card2:hover .local-img3{
+    height:100%;
+}
+.top15{
+  top: 15px !important;
+}
 /* corp card */
 .corpCard-anim:hover .corpDiv .corp1{
-    transform: rotate(-5deg);
+    transform: rotate(-20deg);
     transition: transform 0.9s ease-in-out;
 }
 .corpCard-anim:hover .corpDiv .corp2{
@@ -88,24 +113,6 @@
     background-color: #D5DAEF30;
     padding : 30px 40px 0px 40px;
     border-radius: 10px;
-}
-.gbp{
-    background-color: #FFF4C4B2;
-    color: #FF8740;
-    font-weight: 700;
-    font-size: 14px;
-}
-.usd{
-    background-color: #DADBFFB2;
-    color: #1003A0;
-    font-weight: 700;
-    font-size: 14px;
-}
-.eur{
-    background-color: #FED8F2B2;
-    color: #D108B4;
-    font-weight: 700;
-    font-size: 14px;
 }
 
 
@@ -374,4 +381,67 @@ section {
   .logos-slide .new-card{
     border: none;
   }
+}
+
+.text-payee {
+  background: linear-gradient(166deg, #00D2D3 43.18%, #00B3FF 90.5%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cc-rad{
+  border-radius: 36px;
+}
+.gbp, .usd, .eur {
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+.gbp {
+  background-color: #FFF4C4B2;
+  color: #FF8740;
+}
+
+.usd {
+  background-color: #DADBFFB2;
+  color: #1003A0;
+}
+
+.eur {
+  background-color: #FED8F2B2;
+  color: #D108B4;
+}
+
+.local-acc-card:hover .gbp {
+  background-color: #D5DAEF30;
+  color: var(--Gray-700, #2C3667);
+}
+
+.local-acc-card:hover .usd {
+  background-color: #D5DAEF30;
+  color: var(--Gray-700, #2C3667);
+}
+
+.local-acc-card:hover .eur {
+  background-color: #D5DAEF30;
+  color: var(--Gray-700, #2C3667);
+}
+
+.veri-hove #path1,
+.veri-hove #path2 {
+  opacity: 0; 
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.5s; 
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1; 
+  }
+}
+.absolutex{
+  position: absolute;
+  left: 50%;
+  transform: translate(-100%);
 }

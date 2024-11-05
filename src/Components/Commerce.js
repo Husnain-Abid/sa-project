@@ -16,74 +16,76 @@ const Commerce = () => {
     const sliderRef = useRef(null);
 
     useEffect(() => {
-        if (sliderRef.current) {
-            const clone = sliderRef.current.cloneNode(true);
-            sliderRef.current.parentNode.appendChild(clone);
-        }
+      if (sliderRef.current) {
+        const clone = sliderRef.current.cloneNode(true);
+        sliderRef.current.parentNode.appendChild(clone);
+      }
     }, []);
     const sliderReftwo = useRef(null);
 
     useEffect(() => {
-        if (sliderReftwo.current) {
-            const clone = sliderReftwo.current.cloneNode(true);
-            sliderReftwo.current.parentNode.appendChild(clone);
-        }
+      if (sliderReftwo.current) {
+        const clone = sliderReftwo.current.cloneNode(true);
+        sliderReftwo.current.parentNode.appendChild(clone);
+      }
     }, []);
 
     return (
-        <div className='pt-48 proposition-card pb-32 lg:px-0 px-10'>
+        <div className={`pt-48 proposition-card pb-32 lg:px-0 px-10`}>
             <div className='text-center mainPage'>
-                <p className='small'>Servers</p>
+                <p className=' text-teal-400'>Servers</p>
                 <p className='mt-3 roboto text-6xl fw600'>Empowering Global Commerce</p>
                 <p className='small text-lg mt-3 lg:px-32'>
                     At KeyFX, we pave the way for seamless international commerce through advanced financial technology. Our comprehensive platform is the cornerstone for businesses big and small, simplifying and securing global transactions. Here's how we stand out:
                 </p>
             </div>
             <div className='customCarousle'>
-                <div class="logo-slider">
-                    <div class="logos-slide" ref={sliderRef}>
-
-                        {comm.map((commerce, index) => (
+            <div class="logo-slider">
+                <div class="logos-slide" ref={sliderRef}>
+                    
+                     {comm.map((commerce , index) => (
                             <div className={`slide z-99 ${index === rowtwo.length - 1 ? 'opacity-0' : ''}`}>
-                                <div className="carousel-item" key={commerce.id}>
-                                    <div className=' w-full mx-5 min-w-400'>
-                                        <div className='v-card3'>
-                                            <div className='v-card py-12 px-5 min-w-400 rounded-xl text-wrap'>
-                                                <img alt="Not Found" src={commerce.img} />
-                                                <p className='roboto fw600 text-xl'>{commerce.title}</p>
-                                                <p className='small'>{commerce.desc}</p>
-                                            </div>
+                            <div className="carousel-item" key={commerce.id}>
+                                <div className=' w-full mx-5 min-w-400'>
+                                    <div className='v-card3'>
+                                        <div className=' shadowed-di'></div>
+                                        <div className=' v-card SliderBoxShadow py-12 px-5 min-w-400 rounded-xl text-wrap border-1'>
+                                            <img alt="Not Found" src={commerce.img} />
+                                            <p className='roboto fw600 text-xl'>{commerce.title}</p>
+                                            <p className='small'>{commerce.desc}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-
                     </div>
+            ))}
+                    
                 </div>
             </div>
+            </div>
             <div className='customCarousle'>
-                <div class="logo-slider">
-                    <div class="logos-slide" ref={sliderReftwo}>
-
-                        {rowtwo.map((commerce, index) => (
+            <div class="logo-slider">
+                <div class="logos-slide" ref={sliderReftwo}>
+                    
+                     {rowtwo.map((commerce, index) => (
                             <div className={`slide z-99 ${index === rowtwo.length - 1 ? 'opacity-0' : ''}`}>
-                                <div className="carousel-item" key={commerce.id}>
-                                    <div className=' w-full mx-5 min-w-400'>
+                                    <div className="carousel-item" key={commerce.id}>
+                                        <div className=' w-full mx-5 min-w-400'>
                                         <div className='v-card3'>
-                                            <div className="v-card py-12 px-5 min-w-400 rounded-xl text-wrap hover:shadow-gradient transition-shadow duration-300 ease-in-out">
-                                                <img alt="Not Found" src={commerce.img} />
-                                                <p className="roboto fw600 text-xl">{commerce.title}</p>
-                                                <p className="small">{commerce.desc}</p>
-                                            </div>
+                                        <div className=' shadowed-di'></div>
+                                        <div className=' v-card SliderBoxShadow py-12 px-5 min-w-400 rounded-xl text-wrap border-1'>
+                                            <img alt="Not Found" src={commerce.img} />
+                                            <p className='roboto fw600 text-xl'>{commerce.title}</p>
+                                            <p className='small'>{commerce.desc}</p>
                                         </div>
                                     </div>
-                                </div>
+                                        </div>
+                                    </div>
                             </div>
-                        ))}
-
-                    </div>
+                    ))}
+                    
                 </div>
+            </div>
             </div>
         </div>
     );

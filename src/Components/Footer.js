@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 640);
+        };
+
+        // Set initial value based on screen width
+        handleResize();
+
+        // Listen for resize events
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+
+
+
+
+
     return (
-        <div className='mainPage2 pb-32'>
+        <div className='mainPage2 pb-28'>
             <div>
             <img alt="Not Found" src='/logo.png'/>
             </div>
@@ -10,26 +34,26 @@ const Footer = () => {
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Key.FX</p>
 
-                    <a className='mt-4 roboto text-sm'>About Us</a>
-                    <a className='mt-2 roboto text-sm'>Why Key.FX ?</a>
-                    <a className='mt-2 roboto text-sm'>Pricing</a>
-                    <a className='mt-2 roboto text-sm'>Blog</a>
+                    <a className='mt-4 roboto text-sm mt-2'>About Us</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Why Key.FX ?</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Pricing</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Blog</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Features</p>
 
-                    <a className='mt-4 roboto text-sm'>Features 1</a>
-                    <a className='mt-2 roboto text-sm'>Features 2</a>
-                    <a className='mt-2 roboto text-sm'>Features 3</a>
-                    <a className='mt-2 roboto text-sm'>Features 4</a>
+                    <a className='mt-4 roboto text-sm mt-2'>Features 1</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Features 2</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Features 3</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Features 4</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Support</p>
 
-                    <a className='mt-4 roboto text-sm'>Terms of Service</a>
-                    <a className='mt-2 roboto text-sm'>Privacy and Cookie Policy</a>
-                    <a className='mt-2 roboto text-sm'>FAQ</a>
-                    <a className='mt-2 roboto text-sm'>Complaint form</a>
+                    <a className='mt-4 roboto text-sm  mt-2'>Terms of Service</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Privacy and Cookie Policy</a>
+                    <a className='mt-2 roboto text-sm mt-2'>FAQ</a>
+                    <a className='mt-2 roboto text-sm mt-2'>Complaint form</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Contact us</p>
@@ -43,7 +67,7 @@ const Footer = () => {
             <div className='border-line'>
 
             </div>
-            <div className='flex items-center sm-col gap-4'>
+            <div className={`flex sm-col gap-4 ${isMobile ? " items-start" : " items-center" }  `}>
                 <img className='xl:w-40 ' src="/LCCI 1.svg" alt='Not Available' />
                 <p className='text-xxs roboto'>KeyFX registered in the United Kingdom under registration number 12994112, (128 City Road, London, United Kingdom, EC1V 2NX) and is an appointed representative and distributor for The Payment Firm Ltd t/a The PayFirm Ltd. Registered office: 5 Jewry St, London, EC3N 2EX. Registered in England and Wales. Registered number: 12483085.The Payment Firm Ltd is authorised and regulated by the Financial Conduct Authority Reference number 901084 as a Payment services / Authorised Electronic Money Institution which stipulates the rights and obligations for both payment service providers and users, how to authorise and execute transactions, liability in case of unauthorised use of payment instruments, refunds on payments, payment orders,, value dating of payments and safeguarding client money.</p>
             </div>

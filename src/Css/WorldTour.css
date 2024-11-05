@@ -28,15 +28,21 @@
 .globe{
     margin-top: 400px;
     position: relative;
-    z-index: 999 !important;
+    z-index: 99 !important;
 }
 .z-999{
   z-index: 100 !important;
 }
-.curr-icons{
+.curr-icons {
+  top: -140px;
+  width: 67%;
+  height: 575px;
+  object-fit: contain;
+}
+/* .curr-icons{
   top: -90px;
   width: 51%;
-}
+} */
 .cvt-shadow {
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
     padding: 26px;
@@ -62,33 +68,44 @@
     @media only screen and (min-width: 700px) and (max-width : 1050px)  {
 
       .observablehq{
-        height: 250px;
+        height: 250px !important  ;
         width: 100% !important;
       }
       .globe{
         margin-top: 250px !important;
       }
+
+      .observablehq canvas{
+        width : 200% !important;
+        left: -50%;
+      } 
         
     }
-    @media only screen and (min-width: 1000px) and (max-width : 1700px)  {
+    @media only screen and (min-width: 1050px) and (max-width : 1700px)  {
       .observablehq{
-        height: 200px;
+        height: 270px;
         width: 100% !important;
       }
       .globe{
-        margin-top: 200px !important;
+        margin-top: 270px !important;
+      }
+      .curr-icons{
+        top : -130px;
+        width: 75% !important;
+        height: 540px !important;
       }
         
     }
     @media only screen and (min-width: 1700px)  {
       .observablehq{
         position: absolute;
-        height: 230px;
+        height: 280px;
         width: 100% !important;
     }
     .h-div{
-      height: 230px !important;
+      height: 280px !important;
     }
+
     .observablehq canvas{
         /* left: -1500px; */
         z-index: 99;
@@ -96,18 +113,40 @@
         /* width: 1900px !important; */
     }
     .globe{
-      margin-top: 230px !important;
+      margin-top: 280px !important;
     }
     .header-text{
       width: 600px;
       text-align: start;
     }
     .mainPage{
-      padding-left: 300px !important;
-      padding-right: 300px !important;
+      padding-left: 150px !important;
+      padding-right: 150px !important;
     }
     .mainPage2{
       padding-left: 350px !important;
       padding-right: 350px !important;
     }
     }
+    @media only screen and (min-width: 1250px) {
+      .observablehq canvas{
+        width : 200% !important;
+        left: -50%;
+      }
+    }
+    @media only screen and (min-width: 1450px) {
+      .observablehq canvas{
+        width : 250% !important;
+        left: -75%;
+      }
+    }
+    
+      @media only screen and (min-width: 1550px) {
+        .observablehq canvas{
+          width : 300% !important;
+          left: -100%;
+        }
+      }
+  .globe{
+    z-index: 999 !important;
+  }

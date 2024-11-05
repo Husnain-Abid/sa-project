@@ -4,7 +4,7 @@
 }
 
 .tree ul {
-    padding-top: 20px;
+    padding-top: 30px;
     position: relative;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -28,7 +28,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 220px;
-    height: 300px;
+    height: 340px;
     z-index: -1;
     border: 1px solid var(--Gray-100, #AFB7DC);
     padding: 5px !important;
@@ -37,14 +37,14 @@
     border-radius: 14px;
 }
 
-/* We will use ::before and ::after to draw the connectors */
+
 .tree li::before,
 .tree li::after {
     content: '';
     position: absolute;
     top: 0;
     right: 50%;
-    border-top: 3px solid #ccc; /* Initial color for connectors */
+    border-top: 3px solid #ccc; 
     width: 47%;
     height: 20px;
 }
@@ -52,27 +52,27 @@
 .tree li::after {
     right: auto;
     left: 50%;
-    border-left: 3px solid #ccc; /* Initial color for connectors */
+    border-left: 3px solid #ccc; 
 }
 
-/* We need to remove left-right connectors from elements without any siblings */
+
 .tree li:only-child::after,
 .tree li:only-child::before {
     display: none;
 }
 
-/* Remove space from the top of single children */
+
 .tree li:only-child {
     padding-top: 0;
 }
 
-/* Remove left connector from first child and right connector from last child */
+
 .tree li:first-child::before,
 .tree li:last-child::after {
     border: 0 none;
 }
 
-/* Adding back the vertical connector to the last nodes */
+
 .tree li:last-child::before {
     border-right: 3px solid #ccc;
     border-radius: 0 5px 0 0;
@@ -82,15 +82,15 @@
     border-radius: 5px 0 0 0;
 }
 
-/* Time to add downward connectors from parents */
+
 .tree ul ul::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    border-left: 3px solid #ccc; /* Initial color for downward connectors */
+    border-left: 3px solid #ccc; 
     width: 0;
-    height: 122px;
+    height: 132px;
 }
 
 .tree li a {
@@ -104,7 +104,7 @@
     transition: all 0.5s;
 }
 
-/* Parent and child styles */
+
 .parent {
 }
 
@@ -143,7 +143,7 @@
     color: var(--Gray-700, #2C3667);
 }
 
-/* Rainbow animation */
+
 .cstomUl{
     position: relative;
     z-index: 999;
@@ -183,14 +183,16 @@
 }
 
 .check-lcb{
-    width: 60px; /* Adjust size as needed */
+    width: 30px; 
     height: 25px;
     border-radius: 8px;
+    appearance: none; /* removes default checkbox styling */
+    background-color: #ECF0FF;
 }
 .custom-checkbox {
     appearance: none;
-    width: 60px; /* Adjust size as needed */
-    height: 25px;
+    width: 30px; 
+    height: 30px;
     border-radius: 8px;
     background: var(--Gray-300, #7680B0);
     display: inline-flex;
@@ -206,7 +208,63 @@
 }
 .custom-checkbox:checked::after {
     content: "✓";
-    font-size: 14px; /* Adjust size if needed */
+    font-size: 14px; 
     font-weight: bold;
     color: white;
+}
+.crop-container {
+    width: calc(100% - 550px); 
+    overflow: hidden;
+    margin-left: 250px; 
+}
+
+
+
+@media only screen and (min-width: 1350px)  {
+    .background-shadow{
+        width: 280px;
+    }
+    .child2{
+        width: 170px;
+    }
+}
+
+.corpCard-anim:hover .upsideDiv {
+    position: relative;
+    z-index: 1;
+}
+.corpCard-anim:hover .upsideDiv::before {
+    content: "";
+    position: absolute;
+    top: -30px; 
+    left: -30px;
+    right: 0;
+    height: 100px; 
+    background: #0AE0C8;
+    opacity: 0.15;
+    filter: blur(57px);
+    z-index: -1; 
+    border-radius: 50%; 
+}
+.v-card3:hover .shadowed-di {
+    opacity: 0.2;
+    filter: blur(8px);
+}
+
+.shadowed-di {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    right: 0;
+    bottom: -15px;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.30) 0%, rgba(231, 166, 1, 0.00) 100%), 
+                radial-gradient(70.71% 70.71% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0.00) 100%), 
+                radial-gradient(110.11% 70.71% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), 
+                radial-gradient(41.92% 70.71% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.60) 100%), 
+                radial-gradient(99.33% 70.71% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0.00) 100%);
+    background-blend-mode: overlay, normal, normal, color-dodge, normal;
+    border-radius: 20px;
+    pointer-events: none; /* Prevents any interaction with the shadow */
 }

@@ -15,7 +15,9 @@ const BarChart = () => {
 
     return (
         <div className='flex justify-center relative'>
-            <div className='2xl:w-96 w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 rounded-xl ChartBarHeight'>
+            {/* <div className='2xl:w-96 w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight'> */}
+            <div className="2xl:w-96 w-60 md:w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight">
+
                 <p className='serviceAmount pb-2'>$20,245</p>
                 <p className='flex gap-2 pb-4'>
                     <svg width="51" height="28" viewBox="0 0 51 28" fill="none" xmlns="http://www.w3.org/2000/svg">

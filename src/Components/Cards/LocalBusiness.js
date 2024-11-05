@@ -10,7 +10,7 @@ const LocalBusinessCard = () => {
 <div class="tree">
 	<ul className='cstomUl'>
     <li
-                className={`parent pt-2 flex justify-center flex-col items-center ${isHovered ? 'custom-hover-class' : ''}`}
+                className={`parent pt-4 flex justify-center flex-col items-center ${isHovered ? 'custom-hover-class' : ''}`}
                 onClick={() => setIsHovered(!isHovered)}
             >
         <div class="background-shadow"></div>
