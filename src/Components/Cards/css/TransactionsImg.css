@@ -3,6 +3,7 @@
     top: -80px;
     left: -60px;
     transition: top 0.9s ease-in-out;
+    z-index: 10;
 }
 
 .verified-img-3 {
@@ -137,7 +138,7 @@
 @media (max-width: 600px) {
     .min-w-400 {
         height: 300px !important;
-        min-width: 280px !important;
+        min-width: 340px !important;
     }
     .min-w-400 .small {
     font-size: 12px;

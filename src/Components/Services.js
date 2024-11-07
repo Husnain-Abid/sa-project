@@ -6,6 +6,8 @@ import CurrenciesSelect from "./CurrencySelect";
 
 
 const Services = () => {
+
+
     const [rate, setRate] = useState(1);
     const [payeeRate, setPayeeRate] = useState(1);
     const [animate, setAnimate] = useState(false);
@@ -13,6 +15,7 @@ const Services = () => {
     const [toCurrency, setToCurrency] = useState("USD");
     const [amount, setAmount] = useState(1);
     const [exchange, setExchange] = useState(1);
+    const [rates, setRates] = useState({}); // Store exchange rates here
 
     const handleFromCurrencyChange = (newCurrency) => {
         setFromCurrency(newCurrency);
@@ -26,35 +29,35 @@ const Services = () => {
         setAmount(e.target.value);
     };
 
-
     const convertCurrency = async () => {
-        const requestData = {
-            from: fromCurrency,
-            to: toCurrency,
-            amount: amount,
-        };
-
         try {
             const response = await fetch("https://keyfx.co.uk/calculator", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(requestData),
+                body: JSON.stringify({}),
             });
 
             const data = await response.json();
-            if (data) {
-                setExchange(data.rates[toCurrency]);
+            if (data && data.rates) {
+                setRates(data.rates); // Store all rates from API response
+                calculateConversion(data.rates);
             }
-            console.log(data);
         } catch (error) {
             console.error("Error converting currency:", error);
         }
     };
 
-
-
+    const calculateConversion = (rates) => {
+        if (rates[fromCurrency] && rates[toCurrency]) {
+            const conversionRate = rates[toCurrency] / rates[fromCurrency];
+            const convertedAmount = amount * conversionRate;
+            setExchange(convertedAmount.toFixed(2)); // Display up to 4 decimal places
+        } else {
+            console.error("Invalid currency rates.");
+        }
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -68,22 +71,14 @@ const Services = () => {
         return () => clearInterval(interval);
     }, []);
 
-
-
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 640);
         };
-
-        // Set initial value based on screen width
         handleResize();
-
-        // Listen for resize events
         window.addEventListener('resize', handleResize);
-
-        // Cleanup event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -92,27 +87,27 @@ const Services = () => {
 
 
     return (
-        <div className='services mainPage2'>
+        <div className={`  ${isMobile ? "mt-[80px]" : "mt-[180px]" } mainPage2`}>
             <div className='text-center'>
                 <p className='small'>L e a r n&ensp;M o r e</p>
-                <p className='mt-3 roboto text-6xl fw600'>KeyFX Services</p>
+                <p className='mt-3 roboto text-[44px] leading-[60px] fw600'>KeyFX Services</p>
             </div>
             <div>
                 <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5 ${isMobile ? 'mt-10' : ' mt-32'} `}>
-                    <div className='lg:order-1 order-2'>
+                    <div className='lg:order-1 order-2 my-auto'>
                         <div className='icon-rotate'>
                             <img className='icon-rotate1' alt="Not Found" src="/Icons/payment 1.png" />
                             <img className='icon-rotate2' alt="Not Found" src="/Icons/payment 2.png" />
 
                         </div>
                         {/* <img alt="Not Found" src="/Component 9.png" /> */}
-                        <p className='mt-3 roboto text-3xl fw600'>Payment Services</p>
+                        <p className='mt-4 roboto text-3xl fw600'>Payment Services</p>
                         <ul className='blue-list mt-4'>
                             <li>Open a multi-currency account</li>
                             <li>Collect and make payments internationally</li>
                             <li>Convert currencies at real-time rates on our website</li>
                         </ul>
-                        <p className='small mt-3'>Streamline your cross-border transactions on one platform. Enjoy <br />bank-beating conversion rates and zero-fee transfers.Experience <br />seamless and secure international payments.</p>
+                        <p className='small mt-3'>Streamline your cross-border transactions on one platform. Enjoy {isMobile ? '' : <br />} bank-beating conversion rates and zero-fee transfers.Experience {isMobile ? '' : <br />} seamless and secure international payments.</p>
                         <button className='text-l rounded-md btn-p flex items-center gap-1 mt-4'>Explore me<i class="bi bi-arrow-right-short text-3xl"></i></button>
                     </div>
                     <div className={`lg:order-2 order-1 flex ${isMobile ? 'justify-start px-3' : 'justify-center'} `}>
@@ -121,7 +116,8 @@ const Services = () => {
                             <div className="v-card absolute -top-4 left-10 cc-rad px-3 py-4 sm:w-72 w-60 transform translate-x-8 translate-y-4">
                                 <h2 className="text-xl font-semibold mb-4 text-center rate-container flex justify-center">
                                     <span className={`rate-value text-payee ${animate ? 'animate-slide' : ''}`}>
-                                        ${payeeRate}
+                                        {/* ${payeeRate } */}
+                                        {exchange}
                                     </span>
                                 </h2>
                                 <div className="mb-3 flex gap-2 font-10 w-full">
@@ -158,31 +154,31 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='relative mt-32'>
+
+                            {/* converstion start  */}
+
+                            <div className="relative mt-32">
                                 <div className="currency-symbol top-left z-9">
                                     <span className="text-3xl text-white">€</span>
                                 </div>
                                 <div className="v-card relative bg-white cc-rad p-6 sm:w-80 w-60 z-10 ">
-
                                     <div className="currency-symbol bottom-right z-99">
                                         <span className="text-3xl text-white font">$</span>
                                     </div>
-
-                                    <div className="text-center">
+                                    <div className="text-start">
                                         <h2 className="text-lg font-semibold mb-4">Convert currencies</h2>
                                         <div className="flex justify-between items-center px-4 py-4 bg-gray-100 rounded-lg mb-4 relative">
                                             <input
-                                                className="w-full bg-transparent"
+                                                className="w-full bg-transparent focus:outline-none focus:border-none"
                                                 type="number"
                                                 step="any"
                                                 value={amount}
                                                 onChange={setAmountFunction}
                                             />
-                                            {/* <span className="text-lg font-semibold">1</span> */}
                                             <span className="flex items-center">
                                                 <CurrenciesSelect
-                                                    selectedCurrency={toCurrency}
-                                                    onCurrencyChange={handleToCurrencyChange}
+                                                    selectedCurrency={fromCurrency}
+                                                    onCurrencyChange={handleFromCurrencyChange}
                                                 />
                                             </span>
                                         </div>
@@ -197,39 +193,49 @@ const Services = () => {
                                             </div>
                                             <span className="flex items-center">
                                                 <CurrenciesSelect
-                                                    selectedCurrency={fromCurrency}
-                                                    onCurrencyChange={handleFromCurrencyChange}
+                                                    selectedCurrency={toCurrency}
+                                                    onCurrencyChange={handleToCurrencyChange}
                                                 />
-                                                {/* <img src="https://flagcdn.com/w320/eu.png" alt="EUR" className="w-6 h-4 ml-2" />
-                                            <span className="ml-2">EUR</span> */}
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+                            {/* converstion end  */}
+
+
+
+
                         </div>
                     </div>
                 </div>
-                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5  mt-5 `}>
+                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5 ${isMobile ? 'mt-0' : 'mt-32'}  `}>
+
+
                     <BarChart />
-                    <div>
+
+
+                    <div className='mx-auto my-auto'>
                         <div className='icon-rotate'>
                             <img className='icon-rotate1' alt="Not Found" src="/Icons/exchange1.png" />
                             <img className='icon-rotate2' alt="Not Found" src="/Icons/exchange2.png" />
 
                         </div>
                         {/* <img alt="Not Found" src="/Component 8.png" /> */}
-                        <p className='mt-3 roboto text-3xl fw600'>Foreign Exchange Services</p>
+                        <p className='mt-4 roboto text-3xl fw600'>Foreign Exchange Services</p>
                         <ul className='blue-list mt-4 '>
                             <li className=''>Convert 33+ currencies at unbeatable rates</li>
                             <li>Make zero-fee international transfers</li>
                             <li>Lock-in your favorable exchange rate</li>
                         </ul>
-                        <p className='small mt-3'>Navigate global markets with confidence. KeyFX offers <br />comprehensive foreign currency services, allowing you to effortlessly <br />manage international transactions and mitigate exchange rate risks.</p>
+                        <p className='small mt-3'>Navigate global markets with confidence. KeyFX offers {isMobile ? '' : <br />}comprehensive foreign currency services, allowing you to effortlessly {isMobile ? '' : <br />}manage international transactions and mitigate exchange rate risks.</p>
                         <button className='text-l mt-4 rounded-xl btn-p flex items-center gap-1'>Explore me <i class="bi bi-arrow-right-short text-3xl"></i></button>
                     </div>
+
                 </div>
-                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5 ${isMobile ? 'mt-0' : 'mt-5'} `}>
+                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5 ${isMobile ? 'mt-0' : 'mt-32'} `}>
                     <div className='lg:order-1 order-2	'>
                         <div className='icon-rotate'>
                             <img className='icon-rotate1' alt="Not Found" src="/Icons/card1.png" />
@@ -240,18 +246,21 @@ const Services = () => {
                         <ul className='blue-list mt-4'>
                             <li>Get debit Mastercard </li>
                             <li>Virtual and physical cards available</li>
+                            <li>Buy in the currency of your choice</li>
                             <li>Real-time bank-beating conversion rates</li>
                         </ul>
-                        <p className='small mt-3'>Experience the convenience of secure spending wherever your <br />business takes you. Whether it's virtual cards for online transactions <br />or physical cards for in-person purchases, KeyFX delivers the <br />flexibility and security you deserve, all at no cost to you.</p>
+                        <p className='small mt-3'>Experience the convenience of secure spending wherever your <br />business takes you. Whether it's virtual cards for online transactions {isMobile ? '' : <br />}  or physical cards for in-person purchases, KeyFX delivers the {isMobile ? '' : <br />} flexibility and security you deserve, all at no cost to you.</p>
                         <button className='text-l mt-4 rounded-md btn-p flex items-center gap-1'>Explore me<i class="bi bi-arrow-right-short text-3xl"></i></button>
                     </div>
+
+
                     <div className={`lg:order-2 order-1 flex justify-center items-end  ${isMobile ? 'mt-5' : 'mt-0'} `}>
                         <div className='leftCard'>
                             {/* <img alt="Not Found" src="/cardServices.png" /> */}
                             <div className='relative'>
                                 <div class="v-card sm:w-72 w-60 flex flex-col items-center justify-center rounded-3xl">
                                     <div className='icon-rotate'>
-                                        <img className='icon-rotate1' alt="Not Found" src="/Icons/card1.png" />
+                                        <img className='icon-rotate1' alt="Not Found" src="/Icons/vcard1.png" />
                                         <img className='icon-rotate2' alt="Not Found" src="/Icons/card2.png" />
                                     </div>
                                     <p className='mt-4 card-head-blue'>Virtual card</p>
@@ -298,7 +307,7 @@ const Services = () => {
                                     </button>
 
                                 </div>
-                                <div className='v-card p-2 flex items-center absolute top-20 sm:-right-32 -right-20 rounded-lg'>
+                                <div className='v-card p-2 flex items-center card-service-animation rounded-lg'>
                                     <svg className='sm:w-14 w-8' width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.04256 4.59171C0.486328 5.38422 0.486328 7.7399 0.486328 12.4513V14.7715C0.486328 23.0787 6.73207 27.11 10.6508 28.8218C11.7138 29.2862 12.2453 29.5183 13.7471 29.5183C15.2488 29.5183 15.7803 29.2862 16.8433 28.8218C20.762 27.11 27.0078 23.0787 27.0078 14.7715V12.4513C27.0078 7.7399 27.0078 5.38422 26.4515 4.59171C25.8953 3.79921 23.6803 3.04102 19.2504 1.52463L18.4064 1.23573C16.0972 0.445276 14.9426 0.0500488 13.7471 0.0500488C12.5515 0.0500488 11.3969 0.445276 9.08771 1.23573L8.24372 1.52463C3.81377 3.04102 1.5988 3.79921 1.04256 4.59171ZM18.2549 12.5733C18.6614 12.1181 18.6218 11.4195 18.1666 11.0131C17.7113 10.6066 17.0128 10.6461 16.6063 11.1014L12.1684 16.0718L10.8878 14.6376C10.4813 14.1823 9.78278 14.1428 9.32753 14.5492C8.87228 14.9557 8.83274 15.6543 9.23921 16.1095L11.3441 18.467C11.5537 18.7018 11.8536 18.8361 12.1684 18.8361C12.4832 18.8361 12.783 18.7018 12.9927 18.467L18.2549 12.5733Z" fill="#00D2D3" />
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0864 9.895C20.6707 10.4474 20.6707 11.343 20.0864 11.8954L13.1047 18.4963C12.5205 19.0487 11.5732 19.0487 10.9889 18.4963L7.99679 15.6673C7.41253 15.1149 7.41253 14.2193 7.99679 13.6669C8.58104 13.1146 9.52831 13.1146 10.1126 13.6669L12.0468 15.4957L17.9707 9.895C18.5549 9.34262 19.5022 9.34262 20.0864 9.895Z" fill="white" />
@@ -321,28 +330,32 @@ const Services = () => {
                     <img alt="Not Found" src="/AtmCard.png" /> */}
                         </div>
                     </div>
+
+
                 </div>
-                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5  ${isMobile ? 'mt-0' : 'mt-5'}  `}>
-                    <div className='justify-center flex mb-5'>
+                <div className={`grid lg:grid-cols-2 grid-cols-1 gap-5  ${isMobile ? 'mt-0' : 'mt-32'}  `}>
+
+                    <div className=' flex justify-center  mb-5'>
                         <LocalBusinessCard />
                         {/* <img alt="Not Found" src="/Local Business Bank Accounts.svg" /> */}
                     </div>
-                    <div>
 
+                    <div className=' my-auto mx-auto'>
                         <div className='icon-rotate'>
                             <img className='icon-rotate1' alt="Not Found" src="/Icons/lb1.png" />
                             <img className='icon-rotate2' alt="Not Found" src="/Icons/lb2.png" />
                         </div>
                         {/* <img alt="Not Found" src="/Component 10.png" /> */}
                         <p className='mt-3 roboto text-3xl fw600'>Local Business Bank Accounts</p>
-                        <ul className='blue-list mt-4 flex justify-between sm-col'>
+                        <ul className={`blue-list mt-4 flex justify-between ${isMobile ? 'gap-0' : 'gap-5'}     sm-col`}>
                             <li>GBP Account </li>
                             <li>EUR Account</li>
                             <li>USD Account</li>
                         </ul>
-                        <p className='small mt-3'>Operate your business like a local on a global scale with GBP, EUR, <br />and USD accounts from KeyFX. Access dedicated accounts in key <br />markets, enabling seamless transactions and eliminating the <br />complexities of cross-border banking.</p>
+                        <p className='small mt-3'>Operate your business like a local on a global scale with GBP, EUR,  {isMobile ? '' : <br />}   and USD accounts from KeyFX. Access dedicated accounts in key {isMobile ? '' : <br />} markets, enabling seamless transactions and eliminating the {isMobile ? '' : <br />} complexities of cross-border banking.</p>
                         <button className='text-l mt-4 rounded-md btn-p flex items-center gap-1'>Explore me <i class="bi bi-arrow-right-short text-3xl"></i></button>
                     </div>
+
                 </div>
             </div>
         </div>

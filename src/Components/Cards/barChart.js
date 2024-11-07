@@ -16,6 +16,8 @@ const BarChart = () => {
     return (
         <div className='flex justify-center relative'>
             {/* <div className='2xl:w-96 w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight'> */}
+
+
             <div className="2xl:w-96 w-60 md:w-80 v-card absolute bottom-0 top-5 left-0 px-4 py-3 cc-rad ChartBarHeight">
 
                 <p className='serviceAmount pb-2'>$20,245</p>
@@ -31,20 +33,37 @@ const BarChart = () => {
                 <div>
                     <div className="bar-chart">
                         {['Jan', 'Feb', 'Mar', 'Apr', 'May'].map((month, index) => (
-                            <div key={month} className={`bar-container bar-${index + 1}`}>
-                                <div
-                                    className="bar"
-                                    style={{
-                                        height: `${heights[index]}%`,
-                                        background: `linear-gradient(166.28deg, #00D2D3 43.18%, #00B3FF 90.5%);`,
-                                    }}
-                                ></div>
-                                <span className="label">{month}</span>
-                            </div>
+                            <>
+                                <div className='flex flex-col'>
+
+                                <div key={month} className={`bar-container bar-${index + 1}`}>
+                                    <div
+                                        className="bar"
+                                        style={{
+                                            height: `${heights[index]}%`,
+                                            background: `linear-gradient(166.28deg, #00D2D3 43.18%, #00B3FF 90.5%);`,
+                                        }}
+                                    ></div>
+                                </div>
+                                <div className='text-center'>
+
+                                    <span className="label text-center">{month}</span>
+
+                                </div>
+
+
+                                </div>
+
+                            </>
                         ))}
                     </div>
                 </div>
             </div>
+
+
+
+
+
             <FlagsSvg />
         </div>
     );

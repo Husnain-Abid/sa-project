@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Commerce = () => {
     const comm = [
@@ -30,12 +30,34 @@ const Commerce = () => {
       }
     }, []);
 
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 640);
+      };
+  
+      // Set initial value based on screen width
+      handleResize();
+  
+      // Listen for resize events
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+
+
+
+
     return (
-        <div className={`pt-48 proposition-card pb-32 lg:px-0 px-10`}>
+        <div className={`pt-36 proposition-card pb-32 ${isMobile ? 'px-0' : 'lg:px-0 px-10'} `}>
             <div className='text-center mainPage'>
-                <p className=' text-teal-400'>Servers</p>
-                <p className='mt-3 roboto text-6xl fw600'>Empowering Global Commerce</p>
-                <p className='small text-lg mt-3 lg:px-32'>
+                <p className={`${isMobile ? 'text-teal-400' : 'text-slate-700'} `}>Servers</p>
+                <p className='mt-3 roboto text-4xl fw600 px-2'>Empowering Global Commerce</p>
+                <p className={`small text-lg mt-3 ${isMobile ? 'px-3' : 'px-56'} `}>
                     At KeyFX, we pave the way for seamless international commerce through advanced financial technology. Our comprehensive platform is the cornerstone for businesses big and small, simplifying and securing global transactions. Here's how we stand out:
                 </p>
             </div>
@@ -49,7 +71,7 @@ const Commerce = () => {
                                 <div className=' w-full mx-5 min-w-400'>
                                     <div className='v-card3'>
                                         <div className=' shadowed-di'></div>
-                                        <div className=' v-card SliderBoxShadow py-12 px-5 min-w-400 rounded-xl text-wrap border-1'>
+                                        <div className={` v-card SliderBoxShadow  py-12 px-5 min-w-400 rounded-xl text-wrap border-1`}>
                                             <img alt="Not Found" src={commerce.img} />
                                             <p className='roboto fw600 text-xl'>{commerce.title}</p>
                                             <p className='small'>{commerce.desc}</p>

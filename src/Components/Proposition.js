@@ -31,15 +31,15 @@ const Proposition = () => {
     }, []);
 
     return (
-        <div className='proposition-card pt-48 mainPage2'>
+        <div className='proposition-card pt-36 mainPage2'>
             <div className='text-center '>
                 <p className='small'>B e n e fi t s</p>
-                <p className='mt-3 roboto text-6xl fw600'>The KeyFX Value Proposition</p>
+                <p className='mt-3 roboto text-4xl fw600'>The KeyFX Value Proposition</p>
             </div>
             <div className={`grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ${isMobile ? 'mt-16' : 'mt-32'} `}>
                 {propo.map(
                     pro => (
-                        <div className='py-12 px-5 bg-anim-1'>
+                        <div className='py-12 px-6 bg-anim-1'>
                             <img alt="Not Found" src={pro.img} />
                             <p className='roboto fw600 text-xl mt-4'>{pro.title}</p>
                             <p className='small mt-3'>{pro.desc}</p>

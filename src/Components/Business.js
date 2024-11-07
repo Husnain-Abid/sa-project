@@ -28,7 +28,7 @@ const Business = () => {
     const cards = [
         {
             id: 1, title: 'Card 1', content: (
-                <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "py-10 px-5"} `}>
+                <div className={`rounded-lg  ${isMobile ? "py-3 px-3" : "py-2 px-3"} `}>
                     <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600`}>Corporate Cards</p>
                     <p className='small mt-2'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
                     <div className=' flex items-center sm:gap-4 gap-2 corpCard-anim '>
@@ -49,7 +49,7 @@ const Business = () => {
         },
         {
             id: 2, title: 'Card 2', content: (
-                <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "py-10 px-5"} `}>
+                <div className={`rounded-lg  ${isMobile ? "py-3 px-3" : "py-2 px-3"} `}>
                     <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600`}>Corporate Cards</p>
                     <p className='small mt-2'>Spend securely using our Mastercard debit cards in the currency of your choice. Take advantage of competitive conversion rates and seamless transactions, both online and in-store.</p>
                     {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
@@ -87,7 +87,7 @@ const Business = () => {
         },
         {
             id: 2, title: 'Card 2', content: (
-                <div className={`rounded-lg  ${isMobile ? "py-4 px-3" : "py-10 px-5"} `}>
+                <div className={`rounded-lg  ${isMobile ? "py-3 px-3" : "py-2 px-3"} `}>
                     <p className={`${isMobile ? " mt-0" : " mt-3"} roboto text-3xl fw600`}>Global Multi-Currency Account</p>
                     <p className='small mt-2'>Manage your finances globally with an account that supports up to 33 currencies. Pay and get paid in your chosen currency with ease.</p>
                     {/* <img alt="Not Found" src="/Corporate Cards.png" /> */}
@@ -105,14 +105,19 @@ const Business = () => {
         },
     ];
 
+
+    const sectionData = {
+        heading: "Comprehensive Solutions for Businesses",
+    }
+
+
     return (
-        <div className='pt-48 mainPage'>
+        <div className=''>
             <div className='text-start '>
-                <p className='small'>M u l t i p l e&ensp;P l a t f o r m s</p>
-                <p className='mt-4 roboto text-6xl fw600'>Comprehensive Solutions for Businesses</p>
+                <p className={`small ${isMobile ? "px-2 pt-5" : "px-[100px] pt-[80px]"}   `}>M u l t i p l e&ensp;P l a t f o r m s</p>
             </div>
             <div>
-                <Carousel cards={cards} />
+                <Carousel cards={cards} heading={sectionData.heading}  />
             </div>
             {/* <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 mt-5  '>
                 <div className='rounded-lg business-csr-card py-10 px-5'>

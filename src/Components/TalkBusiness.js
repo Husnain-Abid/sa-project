@@ -148,15 +148,17 @@ useEffect(() => {
 
 
 
+const sectionData = {
+    heading: "Let's talk business",
+}
 
     return (
-        <div className={` mainPage ${isMobile ? "pt-12" : "pt-32"}`}>
+        <div >
             <div className='text-start '>
-                <p className='small'>B l o g</p>
-                <p className='mt-3 roboto text-6xl fw600'>Let's talk business</p>
+                <p className={`small ${isMobile ? "px-[2px] pt-[5px]" : "px-[100px] pt-[80px]"}`}>B l o g</p>
             </div>
             <div>
-                <Carousel cards={cards} />
+                <Carousel cards={cards} heading={sectionData.heading}  />
             </div>
             {/* <div className='grid lg:grid-cols-3 grid-cols-1 lg:gap-5 gap-4  mt-32 '>
                 <div className='rounded-lg business-csr-card p-2'>

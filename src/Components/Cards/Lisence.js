@@ -5,7 +5,7 @@ const Lisence = () => {
 
     return(
         <>
-            <div className={`foil-image cursor-pointer lg:mt-0 mt-5 ${isClicked ? 'lisence-hove' : ''}`}
+            <div className={`foil-image cursor-pointer lg:mt-0 mt-0 ${isClicked ? 'lisence-hove' : ''}`}
                  onClick={() => setIsClicked(!isClicked)}
                 >
                 <div class="imgSignUp"></div>

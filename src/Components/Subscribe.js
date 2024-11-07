@@ -30,11 +30,11 @@ const Subscribe = () => {
                     <div className='flex text-xl fw600 roboto'><p className='text-rbw'>Need Help Before Signing Up?</p><p className='lg:inline hidden'>Get Your </p></div>
                     <p className='text-xl fw600 roboto  hidden lg:flex'>Dedicated Account Manager Today!</p>
                     <p className='text-xl fw600 roboto flex lg:hidden '>Get Your Dedicated Account Manager Today!</p>
-                    <p className={`small ${isMobile? "w-full" : " w-50" }  `}>Not ready to sign up just yet? No problem. Our account managers are here to provide the support and assurance you need.</p>
+                    <p className={`small ${isMobile? "w-full" : " w-4/5" }  `}>Not ready to sign up just yet? No problem. Our account managers are here to provide the support and assurance you need.</p>
                 </div>
-                <div className='flex items-center sm:justify-end justify-center lg:col-span-1 col-span-2 mt-5'>
-                    <div class="subscribe-container w-sm-full">
-                        <input className='sm-inp w-sm-full' type="email" placeholder="Enter your email" />
+                <div className={`flex items-center sm:justify-end justify-center lg:col-span-1 col-span-2 ${isMobile ? "mt-4" : "mt-0"} `}>
+                    <div class={`subscribe-container   ${isMobile? "w-full" : "w-4/5" } `}>
+                        <input className='sm-inp w-full' type="email" placeholder="Enter your email" />
                         <button className='roboto btm-sm w-sm-full' type="button">Subscribe</button>
                     </div>
                 </div>

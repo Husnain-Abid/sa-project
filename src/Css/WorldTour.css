@@ -130,8 +130,14 @@
     }
     @media only screen and (min-width: 1250px) {
       .observablehq canvas{
-        width : 200% !important;
+        /* width : 200% !important;
         left: -50%;
+        top: -15px; */
+
+        width: 165% !important;
+        left: -32%;
+        top: -15px;
+
       }
     }
     @media only screen and (min-width: 1450px) {

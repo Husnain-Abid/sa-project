@@ -28,40 +28,40 @@ const Footer = () => {
     return (
         <div className='mainPage2 pb-28'>
             <div>
-            <img alt="Not Found" src='/logo.png'/>
+            <img alt="Not Found" src='/black_logo.png'/>
             </div>
             <div className='grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-2'>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Key.FX</p>
 
-                    <a className='mt-4 roboto text-sm mt-2'>About Us</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Why Key.FX ?</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Pricing</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Blog</a>
+                    <a className='mt-4 roboto text-sm mt-3'>About Us</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Why Key.FX ?</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Pricing</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Blog</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Features</p>
 
-                    <a className='mt-4 roboto text-sm mt-2'>Features 1</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Features 2</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Features 3</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Features 4</a>
+                    <a className='mt-4 roboto text-sm mt-3'>Features 1</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Features 2</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Features 3</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Features 4</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Support</p>
 
-                    <a className='mt-4 roboto text-sm  mt-2'>Terms of Service</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Privacy and Cookie Policy</a>
-                    <a className='mt-2 roboto text-sm mt-2'>FAQ</a>
-                    <a className='mt-2 roboto text-sm mt-2'>Complaint form</a>
+                    <a className='mt-4 roboto text-sm  mt-3'>Terms of Service</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Privacy and Cookie Policy</a>
+                    <a className='mt-2 roboto text-sm mt-3'>FAQ</a>
+                    <a className='mt-2 roboto text-sm mt-3'>Complaint form</a>
                 </div>
                 <div className='flex flex-col'>
                     <p className='mt-4 font-medium text-lg'>Contact us</p>
 
                     <a className='mt-4 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Phone Calling Rounded.svg' />0800-002-9331</a>
-                    <a className='mt-2 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Letter.svg' />info@keyfx.co.uk</a>
-                    <a className='mt-2 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Clock Circle.svg' />9am-5pm Mon - Fri</a>
-                    <a className='mt-2 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Streets Map Point.svg' />128 City Road, London, EC1V 2NX</a>
+                    <a className='mt-3 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Letter.svg' />info@keyfx.co.uk</a>
+                    <a className='mt-3 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Clock Circle.svg' />9am-5pm Mon - Fri</a>
+                    <a className='mt-3 roboto text-sm flex items-center gap-2'><img alt='Not Available' src='/Streets Map Point.svg' />128 City Road, London, EC1V 2NX</a>
                 </div>
             </div>
             <div className='border-line'>

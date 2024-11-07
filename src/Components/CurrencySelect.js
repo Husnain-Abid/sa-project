@@ -96,7 +96,7 @@ const CurrenciesSelect = ({ selectedCurrency, onCurrencyChange }) => {
                 height="16"
                 style={{ marginRight: '10px' }}
               />
-              {currency.code}
+              {`${currency.code} `}  
             </div>
           ))}
         </div>
